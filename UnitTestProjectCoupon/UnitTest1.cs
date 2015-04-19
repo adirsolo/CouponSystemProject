@@ -35,8 +35,10 @@ namespace UnitTestProjectCoupon
         public void TestExistingCustomer()
         {
             using (var db = new CopunContext())
+            
             {
                 c1 = new Customer();
+
                 c1.UserName = "Temp";
                 c1.Telephone = 049999999;
                 c1.Password = "bla";
@@ -48,8 +50,10 @@ namespace UnitTestProjectCoupon
                 c2.Password = "bla";
                 c2.Email = "temp@temp.com";
                 c2.location = "Akko";
+                //db.SaveChanges();
                 db.Customers.Add(c1);
-                db.Customers.Add(c2);
+               // db.Customers.Add(c2);
+                db.SaveChanges();
             }
         }
 
