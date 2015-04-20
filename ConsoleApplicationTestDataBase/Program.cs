@@ -6,13 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CodeFirstNewDataBase
+namespace ConsoleApplicationTestDataBase
 {
     class Program
     {
         static void Main(string[] args)
         {
-            using (var db = new CopunContext())
+            using (var db = new TestDbCopunContext())
             {
                 // Create and save a new Blog 
                 Console.Write("Enter a name for a new Copun: ");
@@ -111,18 +111,6 @@ namespace CodeFirstNewDataBase
         public string status { get; set; }
         public double rating { get; set; }
 
-    }
-
-    public class CopunContext : DbContext
-    {
-        public DbSet<Customer> Customers { get; set; }
-        public DbSet<CustomersFavoriteCatagories> CustomersFavoriteCatagories { get; set; }
-        public DbSet<CustomerCopuns> CustomerCopuns { get; set; }
-        public DbSet<SystemManager> SystemManagers { get; set; }
-        public DbSet<BuisnessOwner> BuisnessOwners { get; set; }
-        public DbSet<Copun> Copuns { get; set; }
-        public DbSet<Buisness> Buisnesses { get; set; }
-        public DbSet<Order> Orders { get; set; }
     }
 
     public class TestDbCopunContext : DbContext
