@@ -57,6 +57,13 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="UnitTestOrder.cs" />
+    <Compile Include="UnitTestBuisness.cs" />
+    <Compile Include="UnitTestCopun.cs" />
+    <Compile Include="UnitTestBuisnessOwner.cs" />
+    <Compile Include="UnitTestSystemManager.cs" />
+    <Compile Include="UnitTestCustomersCopuns.cs" />
+    <Compile Include="UnitTestCustomersFavoriteCatagories.cs" />
     <Compile Include="UnitTestCustomers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

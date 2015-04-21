@@ -14,6 +14,11 @@ namespace UnitTestProjectCoupon
         [TestInitialize]
         public void TestInitCustomer()
         {
+            //making sure the table is empty
+            using (var db = new TestDbCopunContext())
+            {
+                db.Database.ExecuteSqlCommand("TRUNCATE TABLE [Customers]");
+            }
             c = new Customer();
             c.UserName = "Temp";
             c.Telephone = 049999999;
@@ -52,6 +57,7 @@ namespace UnitTestProjectCoupon
             {
                 
                 db.Customers.Add(c);
+                db.SaveChanges();
                 db.Customers.Add(c);
                 db.SaveChanges();
             }
@@ -62,22 +68,8 @@ namespace UnitTestProjectCoupon
         {
             using (var db = new TestDbCopunContext())
             {
-       //         db.Customers.Add(c1);
+                db.Customers.Add(c1);
                 db.Customers.Remove(c1);
-                db.SaveChanges();
-            }
-        }
-
-        [TestMethod]
-        public void TestChangeCustomer()
-        {
-            using (var db = new TestDbCopunContext())
-            {
-                db.Customers.Add(c2);
-                db.SaveChanges();
-                var original = db.Customers.Find(c2.UserName);
-                c2.location = "Beer Sheava";
-                db.Entry(original).CurrentValues.SetValues(c2);
                 db.SaveChanges();
             }
         }
