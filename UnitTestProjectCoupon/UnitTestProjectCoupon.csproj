@@ -57,20 +57,20 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTestOrder.cs" />
+    <Compile Include="UnitTestSocialCopun.cs" />
+    <Compile Include="UnitTestCopunOrder.cs" />
     <Compile Include="UnitTestBuisness.cs" />
     <Compile Include="UnitTestCopun.cs" />
     <Compile Include="UnitTestBuisnessOwner.cs" />
     <Compile Include="UnitTestSystemManager.cs" />
-    <Compile Include="UnitTestCustomersCopuns.cs" />
     <Compile Include="UnitTestCustomersFavoriteCatagories.cs" />
     <Compile Include="UnitTestCustomers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ConsoleApplication1\ConsoleApplication1.csproj">
-      <Project>{ac09282d-43f4-4063-bdd2-381e7c74c809}</Project>
-      <Name>ConsoleApplication1</Name>
+    <ProjectReference Include="..\ConsoleApplicationTestDataBase\ConsoleApplicationTestDataBase.csproj">
+      <Project>{ca94b4a4-a793-40a5-bc30-aa663759db55}</Project>
+      <Name>ConsoleApplicationTestDataBase</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -17,17 +17,17 @@ namespace UnitTestProjectCoupon
             //making sure the table is empty
             using (var db = new TestDbCopunContext())
             {
-                db.Database.ExecuteSqlCommand("TRUNCATE TABLE [CustomersFavoriteCatagories]");
+        //        db.Database.ExecuteSqlCommand("TRUNCATE TABLE [CustomersFavoriteCatagories]");
             }
             cfc = new CustomersFavoriteCatagories();
-            cfc.Category = "Food";
-            cfc.UserName = "sharki";
+            cfc.Category = 1;
+            cfc.UserName = "Temp";
             cfc1 = new CustomersFavoriteCatagories();
-            cfc1.Category = "Food";
-            cfc1.UserName = "sharki1";
+            cfc1.Category = 1;
+            cfc1.UserName = "Tempo";
             cfc2 = new CustomersFavoriteCatagories();
-            cfc2.Category = "Food";
-            cfc2.UserName = "sharki2";
+            cfc2.Category = 1;
+            cfc2.UserName = "Usertesto";
         }
 
         [TestMethod]

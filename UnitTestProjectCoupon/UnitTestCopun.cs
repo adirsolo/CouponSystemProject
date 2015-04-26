@@ -8,44 +8,38 @@ namespace UnitTestProjectCoupon
     [TestClass]
     public class UnitTestCopun : TestDbCopunContext
     {
-        Copun c;
-        Copun c1;
-        Copun c2;
+        Copuns c;
+        Copuns c1;
+        Copuns c2;
         [TestInitialize]
         public void TestInitCopun()
         {
             //making sure the table is empty
             using (var db = new TestDbCopunContext())
             {
-                db.Database.ExecuteSqlCommand("TRUNCATE TABLE [Copuns]");
+    //            db.Database.ExecuteSqlCommand("TRUNCATE TABLE [Copuns]");
             }
-            c = new Copun();
+            c = new Copuns();
             c.BuisnessName = "Pizza";
-            c.Category = "tests";
             c.CopunPrice = 23.0;
             c.Description = "temp desc";
-            c.expired = "01.02.17";
             c.Name = "half";
+            c.Category = 1;
             c.OriginalPrice = 46;
-            c.rating = 5;
-            c1 = new Copun();
-            c1.BuisnessName = "Bank";
-            c1.Category = "tests";
+            c1 = new Copuns();
+            c1.BuisnessName = "Hamburger";
             c1.CopunPrice = 23.0;
             c1.Description = "temp desc";
-            c1.expired = "01.02.17";
             c1.Name = "gogo";
             c1.OriginalPrice = 46;
-            c1.rating = 5;
-            c2 = new Copun();
-            c2.BuisnessName = "Hamburger";
-            c2.Category = "Food";
+            c1.Category = 5;
+            c2 = new Copuns();
+            c2.BuisnessName = "Bank";
             c2.CopunPrice = 23.0;
             c2.Description = "temp desc kolo";
-            c2.expired = "01.02.19";
             c2.Name = "koko";
             c2.OriginalPrice = 46;
-            c2.rating = 5;
+            c2.Category = 5;
         }
 
         [TestMethod]

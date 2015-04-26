@@ -8,30 +8,30 @@ namespace UnitTestProjectCoupon
     [TestClass]
     public class UnitTestBuisnessOwner : TestDbCopunContext
     {
-        BuisnessOwner bo;
-        BuisnessOwner bo1;
-        BuisnessOwner bo2;
+        BuisnessOwners bo;
+        BuisnessOwners bo1;
+        BuisnessOwners bo2;
         [TestInitialize]
         public void TestInitBuisnessOwner()
         {
             //making sure the table is empty
             using (var db = new TestDbCopunContext())
             {
-                db.Database.ExecuteSqlCommand("TRUNCATE TABLE [BuisnessOwners]");
+         //       db.Database.ExecuteSqlCommand("TRUNCATE TABLE [BuisnessOwners]");
             }
-            bo = new BuisnessOwner();
-            bo1 = new BuisnessOwner();
-            bo2 = new BuisnessOwner();
+            bo = new BuisnessOwners();
+            bo1 = new BuisnessOwners();
+            bo2 = new BuisnessOwners();
             bo.UserName = "temp";
-            bo.Telephone = 9811111;
+            bo.Telephone = "9811111";
             bo.Password = "xyz";
             bo.Email = "yeah@right.com";
             bo1.UserName = "temp2";
-            bo1.Telephone = 9811111;
+            bo1.Telephone = "9811111";
             bo1.Password = "xyz";
             bo1.Email = "yeah2@right.com";
             bo2.UserName = "temp3";
-            bo2.Telephone = 9811111;
+            bo2.Telephone = "9811111";
             bo2.Password = "xyz";
             bo2.Email = "yeah3@right.com";
         }

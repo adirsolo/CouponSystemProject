@@ -8,42 +8,47 @@ namespace UnitTestProjectCoupon
     [TestClass]
     public class UnitTestCustomers : TestDbCopunContext
     {
-        Customer c;
-        Customer c1;
-        Customer c2;
+        Customers c;
+        Customers c1;
+        Customers c2;
         [TestInitialize]
         public void TestInitCustomer()
         {
             //making sure the table is empty
             using (var db = new TestDbCopunContext())
             {
-                db.Database.ExecuteSqlCommand("TRUNCATE TABLE [Customers]");
+          //      db.Database.ExecuteSqlCommand("TRUNCATE TABLE [Customers]");
             }
-            c = new Customer();
+            c = new Customers();
             c.UserName = "Temp";
-            c.Telephone = 049999999;
+            c.Telephone = "049999999";
             c.Password = "bla";
             c.Email = "temp@temp.com";
             c.location = "Akko";
-            c1 = new Customer();
+            c.age = 23;
+            c.gender = "Male";
+            c1 = new Customers();
             c1.UserName = "Tempo";
-            c1.Telephone = 049999999;
+            c1.Telephone = "049999999";
             c1.Password = "bla";
             c1.Email = "work@maybe.com";
             c1.location = "Beer Sheava";
-            c2 = new Customer();
+            c1.age = 40;
+            c1.gender = "Female";
+            c2 = new Customers();
             c2.UserName = "Usertesto";
-            c2.Telephone = 049999999;
+            c2.Telephone = "049999999";
             c2.Password = "bla";
             c2.Email = "work@maybe.com";
             c2.location = "Arad";
+            c2.age = 72;
+            c2.gender = "Make";
         }
 
         [TestMethod]
         public void TestAddCustomer()
         {
             using (var db = new TestDbCopunContext())
-            //CopunContext db;
             {
                 db.Customers.Add(c);
                 db.SaveChanges();
