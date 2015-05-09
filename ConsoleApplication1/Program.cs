@@ -49,7 +49,7 @@ namespace CodeFirstNewDataBase
         public string Description { get; set; }
         public int Category { get; set; }
         [ForeignKey("BuisnessOwners")]
-        [Column(Order = 1)] 
+        [Column(Order = 1)]
         public string BuisnessOwnerName { get; set; }
         //CONSTRAINT [PK_dbo.Buisnesses] PRIMARY KEY CLUSTERED ([Name] ASC),
         //CONSTRAINT [FK_Buisnesses_ToBuisnessOwners] FOREIGN KEY ([BuisnessOwnerName]) REFERENCES [dbo].[BuisnessOwners] ([UserName])
@@ -75,12 +75,12 @@ namespace CodeFirstNewDataBase
         public DateTime OrderDate { get; set; }
 
         [ForeignKey("Copuns")]
-        [Column(Order = 1)] 
+        [Column(Order = 1)]
         public string CopunName { get; set; }
         public Copuns Copuns { get; set; }
 
         [ForeignKey("Customers")]
-        [Column(Order = 2)] 
+        [Column(Order = 2)]
         public string CustomerName { get; set; }
         public Customers Customers { get; set; }
         // PRIMARY KEY CLUSTERED ([OrderKey] ASC),
@@ -97,7 +97,7 @@ namespace CodeFirstNewDataBase
         public double OriginalPrice { get; set; }
         public double CopunPrice { get; set; }
         [ForeignKey("Buisnesses")]
-        [Column(Order = 1)] 
+        [Column(Order = 1)]
         public string BuisnessName { get; set; }
         //  CONSTRAINT [PK_dbo.Copuns] PRIMARY KEY CLUSTERED ([Name] ASC),
         //  CONSTRAINT [FK_Copuns_ToBuisness] FOREIGN KEY ([BuisnessName]) REFERENCES [dbo].[Buisnesses] ([Name])
@@ -121,7 +121,7 @@ namespace CodeFirstNewDataBase
     {
         [Key]
         [ForeignKey("Customers")]
-        [Column(Order = 1)] 
+        [Column(Order = 1)]
         public string UserName { get; set; }
         [Key]
         [Column(Order = 2)]
